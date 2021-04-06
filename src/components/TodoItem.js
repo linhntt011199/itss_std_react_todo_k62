@@ -4,15 +4,15 @@
 　・チェックボックスにチェックが入っているか管理する
 　・チェックボックスにチェックが入っているかアイテムをグレーアウトする
 */
-function TodoItem({item, onClick}  ) {
+function TodoItem({item, onCheck}  ) {
   const handleChange = () => {
-    onClick(item);
+    onCheck(item);
   }
   return (
     <label className="panel-block">
       <input 
         type="checkbox" 
-        clicked={item.done}
+        checked={item.done}
         onChange={handleChange}
       />
       <span className={item.done ? 'has-text-grey-light' : ''}> 
